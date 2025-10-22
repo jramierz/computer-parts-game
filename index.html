@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Partes de la Computadora</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/compu.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/compu.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <div class="wrap" role="application" aria-label="Partes de la computadora. Toca una tarjeta para escuchar su nombre.">
+    <div class="card-title">
+      <h1>Partes de la computadora</h1>
+      <p class="tip">Toca o haz clic en cada imagen para escuchar su nombre</p>
+    </div>
+
+    <audio id="snd-computadora" preload="none" src="audio/computadora.mp3"></audio>
+    <audio id="snd-teclado"     preload="none" src="audio/teclado.mp3"></audio>
+    <audio id="snd-mouse"       preload="none" src="audio/mouse.mp3"></audio>
+
+    <div class="grid">
+
+      <!-- COMPUTADORA -->
+      <div class="card" data-key="computadora">
+        <button class="hit" aria-label="Computadora" data-key="computadora">
+          <img class="img" src="img/computadora.png" alt="Computadora" />
+          <div class="label">Computadora</div>
+        </button>
+        <div class="bubble">Computadora</div>
+      </div>
+
+      <!-- TECLADO -->
+      <div class="card" data-key="teclado">
+        <button class="hit" aria-label="Teclado" data-key="teclado">
+          <img class="img" src="img/teclado.png" alt="Teclado" />
+          <div class="label">Teclado</div>
+        </button>
+        <div class="bubble">Teclado</div>
+      </div>
+
+      <!-- MOUSE -->
+      <div class="card" data-key="mouse">
+        <button class="hit" aria-label="Mouse" data-key="mouse">
+          <img class="img" src="img/mouse.png" alt="Mouse" />
+          <div class="label">Ratón</div>
+        </button>
+        <div class="bubble">Ratón</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mascota con menú de ventanas -->
+<div class="mascota" id="mascota" aria-haspopup="true" aria-expanded="false" title="Abrir menú de Compu">
+  <img src="img/compu.png" alt="Compu sonriente" />
+
+  <div class="mascota-say is-ask" id="say" role="status" aria-live="polite">
+  <div class="say-row">
+    <span class="dot"></span>
+    <span class="say-text" id="sayText">¿Puedes ayudarme a encontrar el mouse?</span>
+    <span class="step-pill" id="sayStep">1 / 3</span>
+  </div>
+</div>
+
+  <!-- Burbujas (ventanas) -->
+  <div class="mascota-bubbles" id="bubbles">
+    <button class="bubble-btn" data-window="libre" title="Partes (modo libre)">Partes</button>
+    <button class="bubble-btn primary" data-window="guiada" title="Enseñanza guiada">Guiada</button>
+  </div>
+</div>
+
+<!-- Barra/prompt para guiada -->
+<div class="guided-bar" id="guidedBar" hidden>
+  <span class="step" id="guidedStep">1 / 3</span>
+  <span id="guidedPrompt">¿Puedes ayudarme a encontrar el mouse?</span>
+</div>
+
+<!-- Audios de la narración guiada-->
+<audio id="ask-mouse"     preload="none" src="audio/ask-mouse.mp3"></audio>
+<audio id="ask-teclado"   preload="none" src="audio/ask-teclado.mp3"></audio>
+<audio id="ask-computer"  preload="none" src="audio/ask-computer.mp3"></audio>
+<audio id="try-again"     preload="none" src="audio/try-again.mp3"></audio>
+<audio id="great-next"    preload="none" src="audio/great-next.mp3"></audio>
+<audio id="finish"        preload="none" src="audio/finish.mp3"></audio>
+<audio id="sfx-party"     preload="auto" src="audio/party-horn.mp3"></audio>
+
+<!-- canvas-confetti (CDN, versión browser) -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+<script src="js/computers.js"></script>
+
+</body>
+</html>
+
